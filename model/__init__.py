@@ -23,7 +23,7 @@ def get_save_dir(args, name=None):
     if getattr(args, "save_dir", None):
         save_dir = args.save_dir
     else:
-        RUNS_D=Path(RUNS_DIR)
+        RUNS_D=Path(r"/kaggle/working/")
         project = args.project or (RUNS_D) / args.task
         name = name or args.name or f"{args.mode}"
         save_dir = increment_path(Path(project) / name, exist_ok=args.exist_ok if RANK in {-1, 0} else True)
