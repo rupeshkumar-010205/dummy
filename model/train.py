@@ -48,7 +48,7 @@ class DetectionTrainer:
         self.plots = {}
         init_seeds(self.args.seed + 1 + RANK, deterministic=self.args.deterministic)
         # Dirs
-        self.save_dir = "outruns"
+        self.save_dir = Path("outruns")
         self.args.name = self.save_dir.name  # update name for loggers
         self.wdir = self.save_dir / "weights"  # weights dir
         if RANK in {-1, 0}:
